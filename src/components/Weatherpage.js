@@ -19,11 +19,13 @@ function Weatherpage(){
 
 
     return(
-        <>
+        <div className="flex">
                 <Sidebar />
-                <Weathersettings setCoordinates={setCoordinates}/>
-                {Object.keys(weather)[0] ? <Weathercard data={weather}/> : <div>Enter your zipcode</div>}
-        </>
+                <div className="pl-16 pt-2 ml-auto mr-auto">
+                    <Weathersettings setCoordinates={setCoordinates}/>
+                    {Object.keys(weather)[0] ? <Weathercard data={weather}/> : <div>Enter your zipcode</div>}
+                </div>
+        </div>
     )
 }
 export default Weatherpage;

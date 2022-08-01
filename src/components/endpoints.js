@@ -1,4 +1,3 @@
-import React from 'react'
 import config from './config';
 
 const W_API_BASE_URL = "http://api.openweathermap.org"

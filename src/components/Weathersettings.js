@@ -22,7 +22,7 @@ function Weathersettings({setCoordinates})
    
 
     return(
-        <div className="weatherInput content-center">
+        <div className="weatherInput">
             <label>ZIP Code:</label>
             <input type="text" value={zipCode} onChange={handleSearch}></input>
             <button onClick={handleSubmit}>Submit ZIP</button>

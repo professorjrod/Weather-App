@@ -11,11 +11,11 @@ function Weathercard({data}){
     const city = data.name
 
     return(
-        <div className="content-start">
+        <div className="ta-center pt-14 text-center">
             <h1>Weather in {city}, {country}</h1>
             <h3>{main} - {description}</h3> 
             <h3>Temperature: {temp}°C</h3>
-            <h3>Feels like {feels_like}°C with a max of {temp_max} and a low of {temp_min}</h3>
+            <p>Feels like {feels_like}°C with a max of {temp_max} and a low of {temp_min}</p>
             <p>Current wind speed of {speed}</p>
             <p>Station latitude is {lat} and longitude is {lon}</p>
         </div>
