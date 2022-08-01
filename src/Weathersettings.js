@@ -25,9 +25,9 @@ function Weathersettings(props)
 
     return(
         <div>
-            <label>Zip code:</label>
+            <label>ZIP Code:</label>
             <input type="text" value={zipCode} onChange={handleSearch}></input>
-            <button onClick={handleSubmit}>Submit Zip</button>
+            <button onClick={handleSubmit}>Submit ZIP</button>
         </div>
     )
 }
