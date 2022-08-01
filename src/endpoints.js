@@ -7,7 +7,6 @@ function getWeatherByCoordinates(coordinates){
     .then(response => response.json()))
 }
 function getCoordinatesByZipcode  (zipCode)  {
-    console.log(`invoked!`)
     return (
     fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode}&appid=${config.API_KEY}`)
     .then(response => response.json())
