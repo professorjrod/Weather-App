@@ -12,7 +12,7 @@ const SideBarIcon = ({ icon, text }) => (
     </div>
 )
 
-const SideBar = () => {
+const Sidebar = () => {
     return (
         <div className="fixed top-0 left-0 h-screen w-16 m-0
                         flex flex-col
@@ -29,4 +29,4 @@ const SideBar = () => {
 
 };
 
-export default SideBar
+export default Sidebar

@@ -1,34 +1,29 @@
 import React, {useEffect, useState} from 'react';
 import Weathersettings from './Weathersettings';
-import config from './config';
+import Sidebar from './Sidebar';
+import Weathercard from './Weathercard';
+import {getWeatherByCoordinates} from './endpoints';
 
 function Weatherpage(){
     const [weather, setWeather] = useState({});
-    const [coordinates, setCoordinates] = useState('')
-
-    const W_API_BASE_URL = "http://api.openweathermap.org"
-
-    const getWeatherByCoordinates = () => {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${coordinates[0]}&lon=${coordinates[1]}&appid=${config.API_KEY}`)
-        .then(response => response.json())
-        .then(data => setWeather(weather => weather = data))
-    }
-    
+    const [coordinates, setCoordinates] = useState([])
+  
     useEffect(() =>
     {
-        if(coordinates)
+        if(coordinates[0])
         {
-            console.log('coords', coordinates)
-            getWeatherByCoordinates();
+            getWeatherByCoordinates(coordinates)
+            .then(data => setWeather(data))
         }
-    },[coordinates])
+    }, [coordinates])
+
 
     return(
-        <div className="weatherContainer">
-            <Weathersettings setCoordinates={setCoordinates}/>
-            <h1 className="">Api response:</h1>
-            <p>{JSON.stringify(weather)}</p>
-        </div>
+        <>
+                <Sidebar />
+                <Weathersettings setCoordinates={setCoordinates}/>
+                {Object.keys(weather)[0] ? <Weathercard data={weather}/> : <div>Enter your zipcode</div>}
+        </>
     )
 }
 export default Weatherpage;
