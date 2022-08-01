@@ -1,35 +1,28 @@
 import React, {useEffect, useState} from 'react';
 import Weathersettings from './Weathersettings';
 import Sidebar from './Sidebar';
+import Weathercard from './Weathercard';
 import {getWeatherByCoordinates} from './endpoints';
 
 function Weatherpage(){
     const [weather, setWeather] = useState({});
     const [coordinates, setCoordinates] = useState([])
-
-    const W_API_BASE_URL = "http://api.openweathermap.org"
-
-    
+  
     useEffect(() =>
     {
-        if(coordinates)
+        if(coordinates[0])
         {
             getWeatherByCoordinates(coordinates)
             .then(data => setWeather(data))
         }
-    },[coordinates])
+    }, [coordinates])
 
 
     return(
         <>
-        <div className="flex">
-            <Sidebar />
-        </div>
-        <div className="weatherContainer">
-            <Weathersettings setCoordinates={setCoordinates}/>
-            <h1 className="">Api response:</h1>
-            <p>{JSON.stringify(weather)}</p>
-        </div>
+                <Sidebar />
+                <Weathersettings setCoordinates={setCoordinates}/>
+                {Object.keys(weather)[0] ? <Weathercard data={weather}/> : <div>Enter your zipcode</div>}
         </>
     )
 }
