@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import Weathersettings from './Weathersettings';
 import Sidebar from './Sidebar';
 import Weathercard from './Weathercard';
@@ -23,7 +24,7 @@ function Weatherpage(){
                 <Sidebar />
                 <div className="pl-16 pt-2 ml-auto mr-auto">
                     <Weathersettings setCoordinates={setCoordinates}/>
-                    {Object.keys(weather)[0] ? <Weathercard data={weather}/> : <div>Enter your zipcode</div>}
+                    {Object.keys(weather)[0] ? <Weathercard data={weather}/> : <div className="w-fit m-auto p-1 animate-bounce"><BsFillArrowUpSquareFill/></div>}
                 </div>
         </div>
     )
