@@ -16,7 +16,7 @@
     @apply absolute w-auto p-2 m-2 min-w-max right-20
             bg-blue-700 text-white
             rounded-lg shadow-lg
-            opacity-100 transition-all duration-300 ease-linear
+            opacity-100 transition-all duration-100 ease-linear
             pointer-events-none scale-0
   }
 }
@@ -38,6 +38,8 @@ code {
   background-color: rgb(0, 217, 255);
   text-align: center;
   font-size: 50px;
+  display: block;
+  max-width: calc(100% - 4rem)
 }
 h1,h4 {
   margin: 0;
