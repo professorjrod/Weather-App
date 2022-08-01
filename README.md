@@ -22,9 +22,9 @@ Give it a try!
 
 Start by creating a copy of this github in your computer's terminal and navigating to that new directory.
 
-Next run `npm install` and `npm start` to get things going.
+Next run `npm install` to get things going.
 
-Then you should be able to `open .` the App in your browser.
+Then use `npm start` to open the App in your browser.
 
 ### Using The Website
 
