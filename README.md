@@ -2,15 +2,19 @@
 
 ## Project Description
 
-### `npm start`
+### Creating a Weather App with React.js
 
-### 
+This project is an app we created using our combined knowledge of React and the quite helpful internet. You're able to type in any ZIP Code in the world and this app will return both the current weather and some helpful information about that area of the world.
+
+You're able to favorite any areas of the world you look up which will then save them for quicker, easier viewing next time. There is also a random button that displays a completely random area of the world and it's weather information each time.
+
+Give it a try!
 
 ## How It Looks
 
-###
+### Overall Page View
 
-###
+### App Being Demonstrated
 
 ## How to Use It
 
@@ -24,7 +28,7 @@ Then you should be able to `open .` the App in your browser.
 
 ### Using The Website
 
-You will be asked to enter the ZIP Code of the desired location that they would like to know the weather for.
+You will be asked to enter the ZIP Code of the desired location that you would like to know the weather for.
 
 Once the ZIP has been entered, press the submit button to the right of code you entered.
 
