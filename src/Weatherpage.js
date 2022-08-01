@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Weathersettings from './Weathersettings';
+import Sidebar from './Sidebar';
 import config from './config';
 
 function Weatherpage(){
@@ -24,11 +25,16 @@ function Weatherpage(){
     },[coordinates])
 
     return(
+        <>
+        <div className="flex">
+            <Sidebar />
+        </div>
         <div className="weatherContainer">
             <Weathersettings setCoordinates={setCoordinates}/>
             <h1 className="">Api response:</h1>
             <p>{JSON.stringify(weather)}</p>
         </div>
+        </>
     )
 }
 export default Weatherpage;
