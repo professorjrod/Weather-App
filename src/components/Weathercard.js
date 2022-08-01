@@ -11,7 +11,7 @@ function Weathercard({data}){
     const city = data.name
 
     return(
-        <div>
+        <div className="content-start">
             <h1>Weather in {city}, {country}</h1>
             <h3>{main} - {description}</h3> 
             <h3>Temperature: {temp}°C</h3>
