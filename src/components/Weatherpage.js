@@ -18,13 +18,13 @@ function Weatherpage(){
             .then(data => setWeather(data));
             getForecastByCoordinates(coordinates)
             .then(data => setForecast(data))
-            .then(console.log('Forecast:',forecast))
         }
     }, [coordinates])
 
 
     return(
-        <div className="flex relative content-center ml-16 h-screen">
+        <>
+        <div className="flex relative content-center ml-16 h-fit">
             <div className="space-y-24 m-auto">
                 <Weathersettings setCoordinates={setCoordinates}/> {
                 Object.keys(weather)[0] ? 
@@ -34,8 +34,9 @@ function Weatherpage(){
                     Enter a zip code to get started
                 </div>}
             </div>
-            <Forecastlist data={forecast}/>
         </div>
+        {Object.keys(forecast)[0] ? <Forecastlist data={forecast}/> : null}
+        </>
     )
 }
 
