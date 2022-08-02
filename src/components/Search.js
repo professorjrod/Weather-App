@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { AsyncPaginate } from "react-select-async-paginate"
-import { loadOptions} from "./endpoints"
+import { loadOptions } from "./endpoints"
+import CurrentWeather from "./SearchWeatherCard"
 
 const Search = ({onSearchChange}) => {
 
@@ -13,6 +14,7 @@ const Search = ({onSearchChange}) => {
 
     return (
         <div className="search">
+            
         <AsyncPaginate 
             placeholder="Search for City"
             debounceTimeout={600}

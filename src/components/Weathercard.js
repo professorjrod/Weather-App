@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 function Weathercard({data}){
     const {temp, feels_like,} = data.main
     const {main, description} = data.weather[0]
