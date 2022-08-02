@@ -1,13 +1,14 @@
 import "../weathercard.css"
+import Forecastlist from "./Forecastlist"
 
-const CurrentWeather = ({data}) => {
-
+const CurrentWeather = ({data, forecast}) => {
     const {city} = data
     const {temp, feels_like, humidity, pressure} = data.main
     const {description, icon} = data.weather[0]
     const {speed} = data.wind
 
     return (
+        <>
         <div className="weather">
             <div className="top">
                 <div>
@@ -42,6 +43,8 @@ const CurrentWeather = ({data}) => {
                 </div>
             </div>
         </div>
+        {Object.keys(data)[0] ? <Forecastlist data={forecast} /> : null }
+        </>
     )
 }
 

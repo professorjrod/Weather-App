@@ -24,8 +24,7 @@ function App() {
       .then(async (response) => {
         const weatherResponse = await response[0].json()
         const forecastResponse = await response[1].json()
-
-        setFetchCurrentWeather({ city: searchData.label, ...weatherResponse})
+                setFetchCurrentWeather({ city: searchData.label, ...weatherResponse})
         setFetchForecast({ city: searchData.label, ...forecastResponse})
       })
       .catch((err) => console.log(err))
@@ -39,7 +38,7 @@ function App() {
       <BrowserRouter>
         <Sidebar /> 
         <Routes>
-          <Route path="/" element={<><Search onSearchChange={handleOnSearchChange} />{fetchCurrentWeather && <CurrentWeather data={fetchCurrentWeather}/>}</>}/>
+          <Route path="/" element={<><Search onSearchChange={handleOnSearchChange} />{fetchCurrentWeather && <CurrentWeather forecast={fetchForecast} data={fetchCurrentWeather}/>}</>}/>
           <Route path="search" element={<><Weatherpage /></>}/>
           <Route path="favorites" element={<Favorites />}/>
           <Route path="about" element={<About />}/>
