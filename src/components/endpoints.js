@@ -1,13 +1,17 @@
 import config from './config';
 
-const W_API_BASE_URL = "http://api.openweathermap.org"
+const W_API_BASE_URL = 'http://api.openweathermap.org';
 
 function getWeatherByCoordinates(coordinates, lang="en",units="metric"){
     return(
     fetch(`${W_API_BASE_URL}/data/2.5/weather?lat=${coordinates[0]}&lon=${coordinates[1]}&units=${units}&lang=${lang}&appid=${config.API_KEY}`)
     .then(response => response.json()))
 }
-
+function getForecastByCoordinates(coordinates, lang="en",units="metric"){
+    return(
+    fetch(`${W_API_BASE_URL}/data/2.5/forecast?lat=${coordinates[0]}&lon=${coordinates[1]}&units=${units}&lang=${lang}&appid=${config.API_KEY}`)
+    .then(response => response.json()))
+}
 function getCoordinatesByZipcode  (zipCode)  {
     return (
     fetch(`${W_API_BASE_URL}/geo/1.0/zip?zip=${zipCode}&appid=${config.API_KEY}`)
@@ -50,5 +54,5 @@ export const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5"
 
 export const WEATHER_API_KEY = "290238ed16255a63322018b3f03c43ef"
 
-export {getWeatherByCoordinates, getCoordinatesByZipcode}
+export {getWeatherByCoordinates, getCoordinatesByZipcode, getForecastByCoordinates}
 

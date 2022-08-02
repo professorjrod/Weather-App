@@ -37,7 +37,6 @@ function App() {
   return (
       <>
       <BrowserRouter>
-
         <Sidebar /> 
         <Routes>
           <Route path="/" element={<><Search onSearchChange={handleOnSearchChange} />{fetchCurrentWeather && <CurrentWeather data={fetchCurrentWeather}/>}</>}/>
