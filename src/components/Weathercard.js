@@ -10,12 +10,12 @@ function Weathercard({data}){
     let icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     const city = data.name
     const weatherImages = {
-    sunnyImage: "https://pics.freeartbackgrounds.com/Sky_with_Sun_Background-1481.jpg",
-    cloudyImage:  "https://wallpaperaccess.com/full/1244071.jpg",
-    rainyImage: "http://wallpaperset.com/w/full/9/8/d/18507.jpg"
+        sunnyImage: "https://pics.freeartbackgrounds.com/Sky_with_Sun_Background-1481.jpg",
+        cloudyImage:  "https://wallpaperaccess.com/full/1244071.jpg",
+        rainyImage: "http://wallpaperset.com/w/full/9/8/d/18507.jpg"
     }
     
-    console.log(data.weather)
+
     return(
         <div className="card h-fit min-w-fit">
             <img src={icon} alt="weatherIcon"/>

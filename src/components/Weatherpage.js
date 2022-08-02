@@ -1,12 +1,13 @@
 import React, {useEffect, useState,} from 'react';
-import { BsFillArrowUpSquareFill } from "react-icons/bs";
 import Weathersettings from './Weathersettings';
 import Weathercard from './Weathercard';
-import {getWeatherByCoordinates} from './endpoints';
+import {getForecastByCoordinates, getWeatherByCoordinates} from './endpoints';
+import Forecastlist from './Forecastlist';
 
 
 function Weatherpage(){
     const [weather, setWeather] = useState({});
+    const [forecast, setForecast] = useState({});
     const [coordinates, setCoordinates] = useState([])
   
     useEffect(() =>
@@ -14,7 +15,10 @@ function Weatherpage(){
         if(coordinates[0])
         {
             getWeatherByCoordinates(coordinates)
-            .then(data => setWeather(data))
+            .then(data => setWeather(data));
+            getForecastByCoordinates(coordinates)
+            .then(data => setForecast(data))
+            .then(console.log('Forecast:',forecast))
         }
     }, [coordinates])
 
@@ -30,6 +34,7 @@ function Weatherpage(){
                     Enter a zip code to get started
                 </div>}
             </div>
+            <Forecastlist data={forecast}/>
         </div>
     )
 }
