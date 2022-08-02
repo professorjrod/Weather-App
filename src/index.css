@@ -31,6 +31,9 @@
   .card {
     @apply m-auto p-10 pl-14 bg-sky-500 w-80 h-80 shadow-xl border-2 border-slate-700
   }
+  .card a {
+    @apply hover:text-white underline
+  }
 }
 
 .search {

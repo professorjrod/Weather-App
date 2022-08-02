@@ -1,7 +1,6 @@
 import React from 'react';
 import {Routes, Route, Outlet, BrowserRouter} from 'react-router-dom';
 import Weatherpage from './Weatherpage';
-import Header from './Header';
 import Search from './Search';
 import Favorites from './Favorites';
 import About from './About';
@@ -16,7 +15,7 @@ function App() {
   return (
       <>
       <BrowserRouter>
-        <Header />
+
         <Sidebar /> 
         <Routes>
           <Route path="/" element={<Weatherpage />}/>
