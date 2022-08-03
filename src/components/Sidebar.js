@@ -25,11 +25,6 @@ const Sidebar = () => {
             <Link to="/map"> <SideBarIcon icon={<BsMap size="28" />} text={"Map"} /> </Link>
             <Link to="/about"><SideBarIcon icon={<FaInfo size="28" />} text={"About"}/></Link>
             <Link to="/about"><SideBarIcon icon={<MdLanguage size="28" />} text={"Language"}/></Link>
-            {/* <SideBarIcon icon={<US size="28"/>} text={"United States"} />
-            <SideBarIcon icon={<CN size="28"/>} text={"China"}/>
-            <SideBarIcon icon={<GB size="28"/>} text={"Great Britain"}/>
-            <SideBarIcon icon={<RU size="28"/>} text={"Russia"}/>
-            <SideBarIcon icon={<JP size="28"/>} text={"Japan"}/> */}
         </div>
     )
 
