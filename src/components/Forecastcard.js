@@ -8,9 +8,9 @@ export default function Forecastcard({day, data}){
         timestamps.push(date.toLocaleString().split(' '))
     }
 
-    
+
     return(
-        <div className="forecast w-42">
+        <div className="forecast w-42 shadow-sm">
         <div className="top">
         <div>
             <p className="description">{day}</p>
@@ -35,27 +35,3 @@ export default function Forecastcard({day, data}){
     
     )
 }
-
-
-
-{/* <div className="details">
-<div className="parameter-row">
-    <span className="parameter-label">Details</span>
-</div>
-<div className="parameter-row">
-    <span className="parameter-label">Feels</span>
-    <span className="parameter-value">{Math.round(feels_like)}°</span>
-</div>
-<div className="parameter-row">
-    <span className="parameter-label">Wind</span>
-    <span className="parameter-value">{speed} m/s</span>
-</div>
-<div className="parameter-row">
-    <span className="parameter-label">Humidity</span>
-    <span className="parameter-value">{humidity}%</span>
-</div>
-<div className="parameter-row">
-    <span className="parameter-label">Pressure</span>
-    <span className="parameter-value">{pressure} hPa</span>
-</div>
-</div> */}

@@ -13,7 +13,7 @@ const Search = ({onSearchChange}) => {
     }
 
     return (
-        <div className="search">
+        <div className="w-screen search pl-16">
             
         <AsyncPaginate 
             placeholder="Search for City"

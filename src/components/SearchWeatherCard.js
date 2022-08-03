@@ -11,7 +11,7 @@ const CurrentWeather = ({data, forecast}) => {
     const handleClick = () => postDataToFavorites(data)
 
     return (
-        <>
+        <div className="ml-16">
         <div className="weather">
             <div className="top">
                 <div>
@@ -48,7 +48,7 @@ const CurrentWeather = ({data, forecast}) => {
             </div>
         </div>
         {Object.keys(data)[0] ? <Forecastlist data={forecast} /> : null }
-        </>
+        </div>
     )
 }
 
