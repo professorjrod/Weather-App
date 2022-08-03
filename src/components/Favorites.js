@@ -1,16 +1,21 @@
 import React from 'react'
-
-function Favorites(props)
+import {getDataFromFavorites} from './endpoints'
+import Weathercard from './Weathercard'
+function Favorites()
 {
+    const [data, setData] = React.useState([])
+
+    React.useEffect(() => {
+        getDataFromFavorites().then(data => setData(data))
+    }, [])
+
+    console.log(data)
     return(
-        <div className="flex justify-center m-auto">
+        <div className="flex flex-initial flex-wrap m-auto">
             <h1>Favorites</h1>
-            <div className="card">
-                <ul>
-                    <li>Nothing to see here.</li>
-                </ul>
-            </div>
+                {data.map(cityData => <Weathercard key={cityData.id} data={cityData}/>)}
         </div>
+
     )
 }
 export default Favorites;

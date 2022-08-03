@@ -1,11 +1,14 @@
 import "../weathercard.css"
 import Forecastlist from "./Forecastlist"
-
+import { AiFillHeart } from "react-icons/ai";
+import { postDataToFavorites } from './endpoints';
 const CurrentWeather = ({data, forecast}) => {
     const {city} = data
     const {temp, feels_like, humidity, pressure} = data.main
     const {description, icon} = data.weather[0]
     const {speed} = data.wind
+
+    const handleClick = () => postDataToFavorites(data)
 
     return (
         <>
@@ -16,6 +19,7 @@ const CurrentWeather = ({data, forecast}) => {
                     <p className="description">{description}</p>
                 </div>
                 <img alt="weather" className="weather-icon" src={`weather-icons/${icon}.png`} />
+                <AiFillHeart className="hover:text-red-600" onClick={handleClick}/>
             </div>
 
             <div className="bottom">

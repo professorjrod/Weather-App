@@ -1,27 +1,23 @@
 import React from 'react';
-
+import { AiFillHeart } from "react-icons/ai";
+import { postDataToFavorites } from './endpoints';
 function Weathercard({data}){
     const {temp, feels_like, humidity,pressure} = data.main
     const {icon, description} = data.weather[0]
-    const {lat, lon} = data['coord']
     const {speed} = data['wind']
-    const {country} = data['sys']
     const city = data.name
-    const weatherImages = {
-        sunnyImage: "https://pics.freeartbackgrounds.com/Sky_with_Sun_Background-1481.jpg",
-        cloudyImage:  "https://wallpaperaccess.com/full/1244071.jpg",
-        rainyImage: "http://wallpaperset.com/w/full/9/8/d/18507.jpg"
-    }
     
+    const handleClick = () => postDataToFavorites(data)
 
     return(
-        <div className="forecast">
+        <div className="weather">
         <div className="top">
             <div>
                 <p className="city">{city}</p>
                 <p className="description">{description}</p>
             </div>
             <img alt="weather" className="weather-icon" src={`weather-icons/${icon}.png`} />
+            <AiFillHeart className="hover:text-red-600" onClick={handleClick}/>
         </div>
 
         <div className="bottom">

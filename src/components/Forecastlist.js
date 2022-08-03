@@ -3,7 +3,7 @@ import Forecastcard from './Forecastcard'
 
 export default function Forecastlist({data}) {
     const {name,country,timezone} = data.city;
-    
+
     let forecast = {};
 
     const formatForecastData = (data) => {

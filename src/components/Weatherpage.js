@@ -25,7 +25,7 @@ function Weatherpage(){
     return(
         <>
         <div className="flex relative content-center ml-16 h-fit">
-            <div className="space-y-24 m-auto">
+            <div className="m-auto">
                 <Weathersettings setCoordinates={setCoordinates}/> {
                 Object.keys(weather)[0] ? 
                 <Weathercard data={weather}/> 

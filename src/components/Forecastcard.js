@@ -7,7 +7,8 @@ export default function Forecastcard({day, data}){
         const date = new Date(data[i].dt_txt)
         timestamps.push(date.toLocaleString().split(' '))
     }
-    console.log(data)
+
+    
     return(
         <div className="forecast w-42">
         <div className="top">
