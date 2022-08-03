@@ -26,7 +26,7 @@ export default function Forecastlist({data}) {
     formatForecastData(data);
 
     return(
-        <div className="ml-16 grid grid-cols-5">
+        <div className="forecastList ml-16 grid items-center justify-center gap-4">
             {Object.keys(forecast).map(day => <Forecastcard key={day} day={day} data={forecast[day]}/>)}
         </div>
     )

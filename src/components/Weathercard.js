@@ -1,12 +1,11 @@
 import React from 'react';
 
 function Weathercard({data}){
-    const {temp, feels_like,} = data.main
-    const {main, description} = data.weather[0]
+    const {temp, feels_like, humidity,pressure} = data.main
+    const {icon, description} = data.weather[0]
     const {lat, lon} = data['coord']
     const {speed} = data['wind']
     const {country} = data['sys']
-    let icon = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
     const city = data.name
     const weatherImages = {
         sunnyImage: "https://pics.freeartbackgrounds.com/Sky_with_Sun_Background-1481.jpg",
@@ -16,15 +15,40 @@ function Weathercard({data}){
     
 
     return(
-        <div className="card h-fit min-w-fit">
-            <img src={icon} alt="weatherIcon"/>
-            <h1>Weather in {city}, {country}</h1>
-            <h3>{main} - {description}</h3> 
-            <h3>Temperature: {temp}°C</h3>
-            <p>Feels like {feels_like}°C</p>
-            <p>Current wind speed of {speed}</p>
-            <p>Station latitude is {lat} and longitude is {lon}</p>
+        <div className="forecast">
+        <div className="top">
+            <div>
+                <p className="city">{city}</p>
+                <p className="description">{description}</p>
+            </div>
+            <img alt="weather" className="weather-icon" src={`weather-icons/${icon}.png`} />
         </div>
+
+        <div className="bottom">
+            <p className="temp">{Math.round(temp)}°</p>
+            <div className="details">
+                <div className="parameter-row">
+                    <span className="parameter-label">Details</span>
+                </div>
+                <div className="parameter-row">
+                    <span className="parameter-label">Feels</span>
+                    <span className="parameter-value">{Math.round(feels_like)}°</span>
+                </div>
+                <div className="parameter-row">
+                    <span className="parameter-label">Wind</span>
+                    <span className="parameter-value">{speed} m/s</span>
+                </div>
+                <div className="parameter-row">
+                    <span className="parameter-label">Humidity</span>
+                    <span className="parameter-value">{humidity}%</span>
+                </div>
+                <div className="parameter-row">
+                    <span className="parameter-label">Pressure</span>
+                    <span className="parameter-value">{pressure} hPa</span>
+                </div>
+            </div>
+        </div>
+    </div>
     )
 }
 export default Weathercard;

@@ -38,7 +38,18 @@
     @apply  p-10 pl-14 min-w-fit min-h-fit bg-sky-500 shadow-xl border-2 border-slate-700
   }
 }
-
+@media (min-width: 600px) {
+  .forecastList { grid-template-columns: repeat(2, 15%); }
+}
+@media (min-width: 900px) {
+  .forecastList { grid-template-columns: repeat(3, 15%); }
+}
+@media (min-width: 1100px) {
+  .forecastList { grid-template-columns: repeat(4, 15%); }
+}
+@media (min-width: 1280px) {
+  .forecastList { grid-template-columns: repeat(5, 15%); }
+}
 .search {
   max-width: 500px;
   margin: 20px auto;
