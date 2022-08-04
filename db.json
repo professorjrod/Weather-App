@@ -1,12 +1,3 @@
 {
-  "favorites": [
-    {
-      "city": "Dallas",
-      "id": 4684888
-    },
-    {
-      "city": "Andarab District",
-      "id": 1147118
-    }
-  ]
+  "favorites": []
 }

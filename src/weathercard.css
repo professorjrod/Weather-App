@@ -3,7 +3,7 @@
     border-radius: 6px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
     color: #fff;
-    background-color: rgb(32, 34, 37);
+    background-color: rgba(255, 255, 255, 0.2);
     margin: 20px auto 0 auto;
     padding: 0 20px 20px 20px;
 }
@@ -11,10 +11,11 @@
     border-radius: 6px;
     box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
     color: #fff;
-    background-color: rgb(32, 34, 37);
+    background-color: rgba(255, 255, 255, 0.2);
     margin: 20px auto 0 auto;
     padding: 0 20px 20px 20px;
-    min-height: 372px;
+    min-height: 400px;
+    text-align:center;
 }
 
 .top,

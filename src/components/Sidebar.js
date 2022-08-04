@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { MdFavorite, MdLanguage } from "react-icons/md";
 import { FaHome, FaInfo, FaSistrix } from "react-icons/fa";
 import { BsMap } from "react-icons/bs";
+import { AiOutlineClockCircle } from "react-icons/ai"
 
 const SideBarIcon = ({ icon, text }) => (
   <div className="sidebar-icon group">
@@ -16,7 +17,7 @@ const Sidebar = () => {
     <div
       className="fixed top-0 left-0 h-screen w-16 m-0
                         flex flex-col
-                        bg-primary text-secondary"
+                        bg-primary backdrop-blur-xl"
     >
       <Link to="/">
         <SideBarIcon icon={<FaHome size="28" />} text={"Home"} />
@@ -34,6 +35,10 @@ const Sidebar = () => {
       <Link to="/map">
         {" "}
         <SideBarIcon icon={<BsMap size="28" />} text={"Map"} />{" "}
+      </Link>
+      <Link to="/World Clock">
+        {" "}
+        <SideBarIcon icon={<AiOutlineClockCircle  size="28" />} text={"World Clock"} />{" "}
       </Link>
       <Link to="/about">
         <SideBarIcon icon={<FaInfo size="28" />} text={"About"} />

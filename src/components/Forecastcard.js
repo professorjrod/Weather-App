@@ -8,11 +8,11 @@ export default function Forecastcard({ day, data }) {
   }
 
   return (
-    <div className="forecast shadow-sm">
+    <div className="forecast-zip shadow-sm">
       <div className="pt-5">
-        <div className="top">
+        <div className="top-fc">
           <div>
-            <p className="description">{day}</p>
+            <p className="description-fc">{day}</p>
           </div>
         </div>
         <div>

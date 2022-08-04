@@ -15,8 +15,8 @@ function Weathercard({ data, id, favorite = false }) {
   const handleDelete = () => deleteCity(id);
 
   return (
-    <div className="weather">
-      <div className="top">
+    <div className="weather-zip">
+      <div className="top-zip">
         <div>
           <p className="city">{city}</p>
           <p className="description">{description}</p>
@@ -33,7 +33,7 @@ function Weathercard({ data, id, favorite = false }) {
         )}
       </div>
 
-      <div className="bottom">
+      <div className="bottom-zip">
         <p className="temp">{Math.round(temp)}°</p>
         <div className="details">
           <div className="parameter-row">
