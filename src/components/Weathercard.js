@@ -3,6 +3,7 @@ import { AiFillHeart } from "react-icons/ai";
 import { postCityToFavorites } from "./endpoints";
 import { deleteCity } from "./endpoints";
 import { BsTrash } from "react-icons/bs";
+
 function Weathercard({ data, id, favorite = false }) {
   const { temp, feels_like, humidity, pressure } = data.main;
   const { icon, description } = data.weather[0];
