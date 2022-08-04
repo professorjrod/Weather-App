@@ -32,6 +32,11 @@ function getCitysFromFavorites() {
   );
 }
 
+function deleteCity(id) {
+  fetch(`${DB_API_BASE_URL}/favorites/${id}`, {
+    method: "DELETE",
+  });
+}
 function postCityToFavorites(city) {
   console.log(city);
   fetch(`${DB_API_BASE_URL}/favorites`, {
@@ -39,7 +44,7 @@ function postCityToFavorites(city) {
     headers: {
       "Content-Type": "Application/Json",
     },
-    body: JSON.stringify({ city }),
+    body: JSON.stringify(city),
   });
 }
 
@@ -84,4 +89,5 @@ export {
   getForecastByCoordinates,
   postCityToFavorites,
   getWeatherByCity,
+  deleteCity,
 };

@@ -1,16 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { postCityToFavorites } from "./endpoints";
-function Weathercard({ data }) {
+import { deleteCity } from "./endpoints";
+import { BsTrash } from "react-icons/bs";
+function Weathercard({ data, id, favorite = false }) {
   const { temp, feels_like, humidity, pressure } = data.main;
   const { icon, description } = data.weather[0];
   const { speed } = data["wind"];
   const city = data.name;
+  console.log(id);
+  const handleClick = () =>
+    postCityToFavorites({ city: city.split(",")[0], id: id });
 
-  const handleClick = () => postCityToFavorites(city.split(",")[0]);
+  const handleDelete = () => deleteCity(id);
 
   return (
-    <div className="weather align-center">
+    <div className="weather">
       <div className="top">
         <div>
           <p className="city">{city}</p>
@@ -21,7 +26,11 @@ function Weathercard({ data }) {
           className="weather-icon"
           src={`weather-icons/${icon}.png`}
         />
-        <AiFillHeart className="hover:text-red-600" onClick={handleClick} />
+        {favorite ? (
+          <AiFillHeart className="hover:text-red-600" onClick={handleClick} />
+        ) : (
+          <BsTrash className="hover:text-red-600" onClick={handleDelete} />
+        )}
       </div>
 
       <div className="bottom">
