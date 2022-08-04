@@ -2,17 +2,33 @@ import { Link } from "react-router-dom";
 import { MdFavorite, MdLanguage } from "react-icons/md";
 import { FaHome, FaInfo, FaSistrix } from "react-icons/fa";
 import { BsMap } from "react-icons/bs";
-import { AiOutlineClockCircle } from "react-icons/ai"
+import { AiOutlineClockCircle } from "react-icons/ai";
 
-const SideBarIcon = ({ icon, text }) => (
-  <div className="sidebar-icon group">
-    {icon}
+const SideBarIcon = ({ icon, text, setLanguage }) => {
+  const onLanguage = (e) =>
+    setLanguage((language) => (language = e.target.innerText.toLowerCase()));
+  return (
+    <div className="sidebar-icon group">
+      {icon}
 
-    <span className="sidebar-tooltip group-hover:scale-100">{text}</span>
-  </div>
-);
+      {icon.type === MdLanguage ? (
+        <div
+          className="flex language-tooltip group-hover:scale-100 flex-col space-y-2 items-center justify-center"
+          onClick={onLanguage}
+        >
+          <div className="langbutton">EN</div>
 
-const Sidebar = () => {
+          <div className="langbutton">ES</div>
+
+          <div className="langbutton">FR</div>
+        </div>
+      ) : (
+        <span className="sidebar-tooltip group-hover:scale-100">{text}</span>
+      )}
+    </div>
+  );
+};
+const Sidebar = ({ setLanguage }) => {
   return (
     <div
       className="fixed top-0 left-0 h-screen w-16 m-0
@@ -38,13 +54,20 @@ const Sidebar = () => {
       </Link>
       <Link to="/World Clock">
         {" "}
-        <SideBarIcon icon={<AiOutlineClockCircle  size="28" />} text={"World Clock"} />{" "}
+        <SideBarIcon
+          icon={<AiOutlineClockCircle size="28" />}
+          text={"World Clock"}
+        />{" "}
       </Link>
       <Link to="/about">
         <SideBarIcon icon={<FaInfo size="28" />} text={"About"} />
       </Link>
       <Link to="/about">
-        <SideBarIcon icon={<MdLanguage size="28" />} text={"Language"} />
+        <SideBarIcon
+          setLanguage={setLanguage}
+          icon={<MdLanguage size="28" />}
+          text={"Language"}
+        />
       </Link>
     </div>
   );

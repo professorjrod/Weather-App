@@ -20,9 +20,24 @@
     text-xs font-bold
     transition-all duration-100 scale-0 origin-left;
   }
-
+  .language-tooltip {
+    @apply absolute w-auto pt-5 pr-5 pb-5 min-w-max left-14
+    rounded-r-md shadow-md
+    text-white bg-primary
+    text-xs font-bold
+    transition-all duration-100 scale-0 origin-left;
+  }
+  .langbutton {
+    @apply relative flex items-center text-center justify-center
+    h-12 w-12 mt-2 ml-2 mb-2 mx-auto shadow-lg
+    bg-gray-800 text-white
+     hover:text-gray-600
+    rounded-3xl hover:rounded-xl
+    transition-all duration-300 ease-linear
+    cursor-pointer;
+  }
   .zipcode-button {
-    @apply ml-2 p-1 bg-stone-500
+    @apply p-1 bg-stone-500
     rounded-md shadow-md
     hover:scale-105
     transition-all duration-100 ease-linear;

@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "./Header";
 function About() {
+  const [language, setLanguage] = useState("en");
   return (
     <>
       <Header title="About" />
