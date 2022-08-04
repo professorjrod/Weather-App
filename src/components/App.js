@@ -8,6 +8,7 @@ import Sidebar from "./Sidebar";
 import { WEATHER_API_KEY, WEATHER_API_URL } from "./endpoints";
 import CurrentWeather from "./SearchWeatherCard";
 import { Header } from "./Header";
+
 function App() {
   const [fetchCurrentWeather, setFetchCurrentWeather] = useState(null);
   const [fetchForecast, setFetchForecast] = useState(null);
@@ -37,36 +38,38 @@ function App() {
   console.log(fetchForecast);
 
   return (
-    <BrowserRouter>
-      <Sidebar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header title="Home" />
-              <Search onSearchChange={handleOnSearchChange} />
-              {fetchCurrentWeather && (
-                <CurrentWeather
-                  forecast={fetchForecast}
-                  data={fetchCurrentWeather}
-                />
-              )}
-            </>
-          }
-        />
-        <Route
-          path="search"
-          element={
-            <>
-              <Weatherpage />
-            </>
-          }
-        />
-        <Route path="favorites" element={<Favorites />} />
-        <Route path="about" element={<About />} />
-      </Routes>
-    </BrowserRouter>
+    <div className="app">
+      <BrowserRouter>
+        <Sidebar />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header title="Home" />
+                <Search onSearchChange={handleOnSearchChange} />
+                {fetchCurrentWeather && (
+                  <CurrentWeather
+                    forecast={fetchForecast}
+                    data={fetchCurrentWeather}
+                  />
+                )}
+              </>
+            }
+          />
+          <Route
+            path="search"
+            element={
+              <>
+                <Weatherpage />
+              </>
+            }
+          />
+          <Route path="favorites" element={<Favorites />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
