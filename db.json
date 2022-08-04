@@ -1,16 +1,12 @@
 {
   "favorites": [
     {
-      "city": "New York City",
-      "id": 1
+      "city": "Dallas",
+      "id": 4684888
     },
     {
       "city": "Andarab District",
-      "id": 2
-    },
-    {
-      "city": "Abu Dhabi",
-      "id": 3
+      "id": 1147118
     }
   ]
 }

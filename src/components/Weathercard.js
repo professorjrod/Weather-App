@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiFillHeart } from "react-icons/ai";
 import { postCityToFavorites } from "./endpoints";
 import { deleteCity } from "./endpoints";
@@ -8,7 +8,7 @@ function Weathercard({ data, id, favorite = false }) {
   const { icon, description } = data.weather[0];
   const { speed } = data["wind"];
   const city = data.name;
-  console.log(id);
+
   const handleClick = () =>
     postCityToFavorites({ city: city.split(",")[0], id: id });
 

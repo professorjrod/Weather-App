@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 @layer components {
-
   .sidebar-icon {
     @apply relative flex items-center justify-center
             h-12 w-12 mt-2 mb-2 mx-auto shadow-lg
             bg-gray-800 text-white
-             hover:text-gray-600
+            hover:text-secondary
             rounded 
             transition-all duration-300 ease-linear
             cursor-pointer;
@@ -26,26 +25,32 @@
     @apply ml-2 p-1 bg-stone-500
     rounded-md shadow-md
     hover:scale-105
-    transition-all duration-100 ease-linear
+    transition-all duration-100 ease-linear;
   }
   .card {
-    @apply m-auto p-10 pl-14 bg-sky-500 w-80 h-80 shadow-xl border-2 border-slate-700
+    @apply m-auto p-10 pl-14 bg-sky-500 w-80 h-80 shadow-xl border-2 border-slate-700;
   }
   .card a {
-    @apply underline hover:text-cyan
+    @apply underline hover:text-cyan;
   }
   .forecastcard {
-    @apply  p-10 pl-14 min-w-fit min-h-fit bg-sky-500 shadow-xl border-2 border-slate-700
+    @apply p-10 pl-14 min-w-fit min-h-fit bg-sky-500 shadow-xl border-2 border-slate-700;
   }
 }
 @media (min-width: 600px) {
-  .forecastList { grid-template-columns: repeat(2, 15%); }
+  .forecastList {
+    grid-template-columns: repeat(2, 15%);
+  }
 }
 @media (min-width: 1100px) {
-  .forecastList { grid-template-columns: repeat(4, 15%); }
+  .forecastList {
+    grid-template-columns: repeat(4, 15%);
+  }
 }
 @media (min-width: 1280px) {
-  .forecastList { grid-template-columns: repeat(5, 15%); }
+  .forecastList {
+    grid-template-columns: repeat(5, 15%);
+  }
 }
 .search {
   max-width: 500px;
@@ -57,18 +62,19 @@ body {
   font-family: "Roboto", Arial !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d5d4d4;
+  background-color: #5865f2;
+  background-image: url("https://tailwindcss.com/img/background-pattern.svg");
+  background-repeat: repeat;
 }
-
+html {
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.header {
-  background-color: #202225;
-}
-h1,h4 {
+h1,
+h4 {
   margin: 0;
 }
 .weatherContainer {

@@ -38,7 +38,6 @@ function deleteCity(id) {
   });
 }
 function postCityToFavorites(city) {
-  console.log(city);
   fetch(`${DB_API_BASE_URL}/favorites`, {
     method: "POST",
     headers: {

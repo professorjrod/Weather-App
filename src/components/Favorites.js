@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { getCitysFromFavorites, getWeatherByCity } from "./endpoints";
 import Weathercard from "./Weathercard";
 import { Header } from "./Header";
