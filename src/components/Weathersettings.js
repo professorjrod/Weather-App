@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import config from "./config";
 import { getCoordinatesByZipcode } from "./endpoints";
 
 function Weathersettings({ setCoordinates }) {

@@ -3,7 +3,7 @@ import Weathersettings from "./Weathersettings";
 import Weathercard from "./Weathercard";
 import { getForecastByCoordinates, getWeatherByCoordinates } from "./endpoints";
 import Forecastlist from "./Forecastlist";
-
+import { Header } from "./Header";
 function Weatherpage() {
   const [weather, setWeather] = useState({});
   const [forecast, setForecast] = useState({});
@@ -18,6 +18,7 @@ function Weatherpage() {
 
   return (
     <>
+      <Header title="Search" />
       <div className="flex relative content-center ml-16 h-fit">
         <div className="m-auto">
           <Weathersettings setCoordinates={setCoordinates} />{" "}

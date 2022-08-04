@@ -10,7 +10,7 @@ function Weathercard({ data }) {
   const handleClick = () => postCityToFavorites(city.split(",")[0]);
 
   return (
-    <div className="weather">
+    <div className="weather align-center">
       <div className="top">
         <div>
           <p className="city">{city}</p>

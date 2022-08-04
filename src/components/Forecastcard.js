@@ -8,7 +8,7 @@ export default function Forecastcard({ day, data }) {
   }
 
   return (
-    <div className="forecast w-42 shadow-sm">
+    <div className="forecast shadow-sm">
       <div className="pt-5">
         <div className="top">
           <div>
@@ -22,21 +22,17 @@ export default function Forecastcard({ day, data }) {
               const icon = item.weather[0].icon;
               const currentWeather = item.weather[0].main;
               const time =
-                timestamps[index][1].split(":")[0] +
-                ":" +
-                timestamps[index][1].split(":")[1] +
-                " " +
-                timestamps[index][2];
+                timestamps[index][1].split(":")[0] + " " + timestamps[index][2];
               return (
                 <li className="pt-4">
+                  {
+                    <img
+                      alt="weather"
+                      className="w-4 h-4 float-left"
+                      src={`weather-icons/${icon}.png`}
+                    />
+                  }
                   <p>
-                    {
-                      <img
-                        alt="weather"
-                        className="w-4 h-4 float-left"
-                        src={`weather-icons/${icon}.png`}
-                      />
-                    }
                     {time} {currentWeather} {Math.round(temp)}°
                   </p>
                 </li>

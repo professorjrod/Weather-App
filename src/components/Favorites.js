@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getCitysFromFavorites, getWeatherByCity } from "./endpoints";
 import Weathercard from "./Weathercard";
+import { Header } from "./Header";
 function Favorites() {
   const [citys, setCitys] = React.useState([]);
   const [citysWeather, setCitysWeather] = React.useState([]);
@@ -23,18 +24,19 @@ function Favorites() {
     };
   }, [citys]);
 
-  console.log(citysWeather);
-
   return (
-    <div className="flex flex-initial ml-16 flex-wrap m-auto">
-      {citysWeather.map((weather) =>
-        weather.main ? (
-          <Weathercard data={weather} />
-        ) : (
-          <h1>{console.log(weather.message)}</h1>
-        )
-      )}
-    </div>
+    <>
+      <Header title="Favorites" />
+      <div className="grid ml-24  mt-16 mb-16 mr-8 grid-cols-1 md:grid-cols-3 ">
+        {citysWeather.map((weather) =>
+          weather.main ? (
+            <Weathercard data={weather} />
+          ) : (
+            console.log("no weather")
+          )
+        )}
+      </div>
+    </>
   );
 }
 export default Favorites;
