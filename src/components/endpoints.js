@@ -2,6 +2,7 @@ import config from './config';
 
 const W_API_BASE_URL = 'http://api.openweathermap.org';
 const DB_API_BASE_URL = 'http://localhost:3001';
+
 function getWeatherByCoordinates(coordinates, lang="en",units="metric"){
     return(
     fetch(`${W_API_BASE_URL}/data/2.5/weather?lat=${coordinates[0]}&lon=${coordinates[1]}&units=${units}&lang=${lang}&appid=${config.API_KEY}`)
@@ -18,21 +19,22 @@ function getCoordinatesByZipcode  (zipCode)  {
     .then(response => response.json())
     )
 }
-function getDataFromFavorites()
+const getWeatherByCity = (city, units = "metric") => fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${config.API_KEY}`).then(res => res.json())
+function getCitysFromFavorites()
 {
     return(
     fetch(`${DB_API_BASE_URL}/favorites`)
     .then(response => response.json()))
 }
-function postDataToFavorites(data)
+function postCityToFavorites(city)
 {
-    console.log(data)
+    console.log(city)
     fetch(`${DB_API_BASE_URL}/favorites`, {
         method: 'POST',
         headers: {
             'Content-Type': 'Application/Json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify({city})
     })
 }
 
@@ -53,7 +55,7 @@ export const geoApiOptions = {
 export const loadOptions = (inputValue) => {
         
     return fetch(
-        `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
+        `${GEO_API_URL}/cities?minPopulation=100000&namePrefix=${inputValue}`,
         geoApiOptions
      )
         .then(response => response.json())
@@ -76,5 +78,5 @@ export const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5"
 
 export const WEATHER_API_KEY = "290238ed16255a63322018b3f03c43ef"
 
-export {getDataFromFavorites, getWeatherByCoordinates, getCoordinatesByZipcode, getForecastByCoordinates, postDataToFavorites}
+export {getCitysFromFavorites, getWeatherByCoordinates, getCoordinatesByZipcode, getForecastByCoordinates, postCityToFavorites, getWeatherByCity}
 

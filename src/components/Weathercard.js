@@ -1,13 +1,13 @@
 import React from 'react';
 import { AiFillHeart } from "react-icons/ai";
-import { postDataToFavorites } from './endpoints';
+import { postCityToFavorites } from './endpoints';
 function Weathercard({data}){
     const {temp, feels_like, humidity,pressure} = data.main
     const {icon, description} = data.weather[0]
     const {speed} = data['wind']
     const city = data.name
     
-    const handleClick = () => postDataToFavorites(data)
+    const handleClick = () => postCityToFavorites(city.split(',')[0]);
 
     return(
         <div className="weather">

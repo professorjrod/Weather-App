@@ -1,19 +1,35 @@
-import React from 'react'
-import {getDataFromFavorites} from './endpoints'
+import React, {useState} from 'react'
+import {getCitysFromFavorites, getWeatherByCity} from './endpoints'
 import Weathercard from './Weathercard'
 function Favorites()
 {
-    const [data, setData] = React.useState([])
+    const [citys, setCitys] = React.useState([])
+    const [citysWeather, setCitysWeather] = React.useState([])
 
     React.useEffect(() => {
-        getDataFromFavorites().then(data => setData(data))
-    }, [])
+        getCitysFromFavorites().then(citys => setCitys(citys))
+        return () => {
+            setCitys([])
+        }
+    }, []) 
 
-    console.log(data)
+    React.useEffect(() => {
+        for(let i = 0; i < citys.length; i++){
+            getWeatherByCity(citys[i].city)
+            .then(weather => setCitysWeather(citysWeather => [...citysWeather, weather]))
+        }
+        return () => {
+            setCitysWeather([])
+        }
+    }, [citys])
+
+   
+    console.log(citysWeather)
+
     return(
         <div className="flex flex-initial flex-wrap m-auto">
             <h1>Favorites</h1>
-                {data.map(cityData => <Weathercard key={cityData.id} data={cityData}/>)}
+               {citysWeather.map(weather => weather.main ? <Weathercard data={weather}/> : <h1>{console.log(weather.message)}</h1>)}
         </div>
 
     )
