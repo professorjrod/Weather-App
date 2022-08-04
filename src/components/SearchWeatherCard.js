@@ -2,13 +2,15 @@ import "../weathercard.css";
 import Forecastlist from "./Forecastlist";
 import { AiFillHeart } from "react-icons/ai";
 import { postCityToFavorites } from "./endpoints";
+
 const CurrentWeather = ({ data, forecast }) => {
   const { city } = data;
   const { temp, feels_like, humidity, pressure } = data.main;
   const { description, icon } = data.weather[0];
   const { speed } = data.wind;
-
-  const handleClick = () => postCityToFavorites(city.split(",")[0]);
+  const id = data.id;
+  const handleClick = () =>
+    postCityToFavorites({ city: city.split(",")[0], id: id });
 
   return (
     <div className="ml-16">
