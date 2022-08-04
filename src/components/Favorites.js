@@ -11,7 +11,7 @@ function Favorites()
         return () => {
             setCitys([])
         }
-    }, []) 
+    }, [])
 
     React.useEffect(() => {
         for(let i = 0; i < citys.length; i++){
@@ -27,8 +27,7 @@ function Favorites()
     console.log(citysWeather)
 
     return(
-        <div className="flex flex-initial flex-wrap m-auto">
-            <h1>Favorites</h1>
+        <div className="flex flex-initial ml-16 flex-wrap m-auto">
                {citysWeather.map(weather => weather.main ? <Weathercard data={weather}/> : <h1>{console.log(weather.message)}</h1>)}
         </div>
 
