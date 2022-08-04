@@ -11,7 +11,7 @@ const CurrentWeather = ({ data, forecast }) => {
   const id = data.id;
   const handleClick = () =>
     postCityToFavorites({ city: city.split(",")[0], id: id });
-
+  console.log(id);
   return (
     <div className="ml-16">
       <div className="weather">

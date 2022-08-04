@@ -35,7 +35,7 @@ function getCitysFromFavorites() {
 function deleteCity(id) {
   fetch(`${DB_API_BASE_URL}/favorites/${id}`, {
     method: "DELETE",
-  });
+  }).catch(() => getCitysFromFavorites().then((citys) => console.log(citys)));
 }
 function postCityToFavorites(city) {
   fetch(`${DB_API_BASE_URL}/favorites`, {

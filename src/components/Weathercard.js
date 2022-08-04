@@ -1,6 +1,6 @@
 import React from "react";
 import { AiFillHeart } from "react-icons/ai";
-import { postCityToFavorites } from "./endpoints";
+import { getCitysFromFavorites, postCityToFavorites } from "./endpoints";
 import { deleteCity } from "./endpoints";
 import { BsTrash } from "react-icons/bs";
 function Weathercard({ data, id, favorite = false }) {
@@ -8,11 +8,12 @@ function Weathercard({ data, id, favorite = false }) {
   const { icon, description } = data.weather[0];
   const { speed } = data["wind"];
   const city = data.name;
+  const cityName = city.split(",")[0];
+  const handleClick = () => postCityToFavorites({ city: cityName, id: id });
 
-  const handleClick = () =>
-    postCityToFavorites({ city: city.split(",")[0], id: id });
-
-  const handleDelete = () => deleteCity(id);
+  const handleDelete = () => {
+    deleteCity(id).then((res) => res.json());
+  };
 
   return (
     <div className="weather-zip">
