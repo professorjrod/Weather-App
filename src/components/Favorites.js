@@ -27,7 +27,7 @@ function Favorites() {
   return (
     <>
       <Header title="Favorites" />
-      <div className="grid ml-24  mt-16 mb-16 mr-8 grid-cols-1 md:grid-cols-3 ">
+      <div className="grid ml-24 mt-16 mb-16 mr-8 grid-cols-1 md:grid-cols-2 ">
         {citysWeather.map((weather) =>
           weather.main ? (
             <Weathercard data={weather} />

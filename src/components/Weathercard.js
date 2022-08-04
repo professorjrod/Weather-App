@@ -10,8 +10,8 @@ function Weathercard({ data }) {
   const handleClick = () => postCityToFavorites(city.split(",")[0]);
 
   return (
-    <div className="weather align-center">
-      <div className="top">
+    <div className="weather-zip align-center">
+      <div className="top-zip">
         <div>
           <p className="city">{city}</p>
           <p className="description">{description}</p>
@@ -24,7 +24,7 @@ function Weathercard({ data }) {
         <AiFillHeart className="hover:text-red-600" onClick={handleClick} />
       </div>
 
-      <div className="bottom">
+      <div className="bottom-zip">
         <p className="temp">{Math.round(temp)}°</p>
         <div className="details">
           <div className="parameter-row">
