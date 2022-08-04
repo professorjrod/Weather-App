@@ -79,4 +79,7 @@
     text-align: right;
     font-weight: 600;
     font-size: 12px;
+    padding-left: 2px;
+    padding-bottom: 2px;
+    margin-top: auto;
 }

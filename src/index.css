@@ -32,7 +32,7 @@
     @apply m-auto p-10 pl-14 bg-sky-500 w-80 h-80 shadow-xl border-2 border-slate-700
   }
   .card a {
-    @apply hover:text-white underline
+    @apply underline hover:text-cyan
   }
   .forecastcard {
     @apply  p-10 pl-14 min-w-fit min-h-fit bg-sky-500 shadow-xl border-2 border-slate-700
