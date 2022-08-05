@@ -4,9 +4,9 @@
 
 ### Creating a Weather App with React.js
 
-This project is an app we created using our combined knowledge of React and the quite helpful internet. You're able to type in any ZIP Code in the world and this app will return both the current weather and some helpful information about that area of the world.
+This project is an app we created using our combined knowledge of React and the quite useful internet. You're able to type in any city or ZIP Code in the world and this app will return the weather forecast for that area.
 
-You're able to favorite any areas of the world you look up which will then save them for quicker, easier viewing next time. There is also a random button that displays a completely random area of the world and it's weather information each time.
+You're able to favorite any city you look up which will then save them in the favorites tab for quicker, easier viewing next time. There is also a language option that translates the text on the App to other languages making it easier to understand for people from many backgrounds of life.
 
 Give it a try!
 
@@ -20,7 +20,7 @@ Give it a try!
 
 ### Setting Up
 
-Start by creating a copy of this github in your computer's terminal and navigating to that new directory.
+Start by creating a copy of this github in your computer's terminal and then navigating to that new directory.
 
 Next run `npm install` to get things going.
 
@@ -28,8 +28,8 @@ Then use `npm start` to open the App in your browser.
 
 ### Using The Website
 
-You will be asked to enter the ZIP Code of the desired location that you would like to know the weather for.
+You will be asked to enter the ZIP Code or city of the desired location that you would like to know the weather for.
 
-Once the ZIP has been entered, press the submit button to the right of code you entered.
+Once the ZIP or city has been entered, press the submit button next to the information you entered.
 
-On the App will display the weather and some useful information about that location based on the weather. There will also be favorite and random buttons that can be used to save locations or let you discover a completely foreign one.
+The App opened in your browser will display the weather forecast for the requested area. There is also a favorite button that can be used to save locations for quicker viewing next time.
