@@ -37,39 +37,41 @@ function App() {
   };
   console.log(language);
   return (
-    <div className="app">
-      <LanguageContext.Provider value={language}>
-        <BrowserRouter>
-          <Sidebar setLanguage={setLanguage} />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Header title="Home" />
-                  <Search onSearchChange={handleOnSearchChange} />
-                  {fetchCurrentWeather && (
-                    <CurrentWeather
-                      forecast={fetchForecast}
-                      data={fetchCurrentWeather}
-                    />
-                  )}
-                </>
-              }
-            />
-            <Route
-              path="search"
-              element={
-                <>
-                  <Weatherpage />
-                </>
-              }
-            />
-            <Route path="favorites" element={<Favorites />} />
-            <Route path="about" element={<About />} />
-          </Routes>
-        </BrowserRouter>
-      </LanguageContext.Provider>
+    <div className=" background w-screen">
+      <div className="app">
+        <LanguageContext.Provider value={language}>
+          <BrowserRouter>
+            <Sidebar setLanguage={setLanguage} />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Header title="Home" />
+                    <Search onSearchChange={handleOnSearchChange} />
+                    {fetchCurrentWeather && (
+                      <CurrentWeather
+                        forecast={fetchForecast}
+                        data={fetchCurrentWeather}
+                      />
+                    )}
+                  </>
+                }
+              />
+              <Route
+                path="search"
+                element={
+                  <>
+                    <Weatherpage />
+                  </>
+                }
+              />
+              <Route path="favorites" element={<Favorites />} />
+              <Route path="about" element={<About />} />
+            </Routes>
+          </BrowserRouter>
+        </LanguageContext.Provider>
+      </div>
     </div>
   );
 }
