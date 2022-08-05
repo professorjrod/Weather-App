@@ -10,12 +10,6 @@ You're able to favorite any city you look up by pressing the heart which will th
 
 Give it a try!
 
-## How It Looks
-
-### Overall Page View
-
-### App Being Demonstrated
-
 ## How to Use It
 
 ### Setting Up
@@ -34,10 +28,12 @@ Once the ZIP has been entered, press the submit button next to the information y
 
 The App will then display the weather forecast for the requested location for the next 5 days. There is also a favorite button that can be used to save locations for quicker viewing next time and those are saved under the heart icon in the sidebar.
 
-Some stretch features we are currently working on are:
+Some stretch features we are looking into:
 -Getting all the text to change to Spanish or French, then starting to look in to other languages to add.
 -Work on having different world clocks displaying times from around the world as an option in the sidebar.
 -Have a working map function in the sidebar that brings up the globe and allows users to click where they want to know the weather.
+-Give advice on what clothing to wear based on the weather.
+-Make sure App is also mobile-friendly.
 
 ### Credits
 
