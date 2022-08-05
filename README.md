@@ -46,4 +46,4 @@ Justin Myers
 
 ### License
 
-API License? 
+API License - https://api.openweathermap.org/data/2.5
