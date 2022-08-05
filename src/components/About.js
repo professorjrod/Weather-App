@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { createContext } from "react";
 import { Header } from "./Header";
 function About() {
-  const [language, setLanguage] = useState("en");
   return (
     <>
+      <div className=" background w-screen" />
       <Header title="About" />
       <div className="ml-16">
         <div className="weather m-auto h-fit mt-10">
