@@ -3,13 +3,17 @@ import config from "./config";
 const W_API_BASE_URL = "http://api.openweathermap.org";
 const DB_API_BASE_URL = "http://localhost:3001";
 
-function getWeatherByCoordinates(coordinates, lang = "en", units = "metric") {
+function getWeatherByCoordinates(coordinates, lang = "en", units = "imperial") {
   return fetch(
     `${W_API_BASE_URL}/data/2.5/weather?lat=${coordinates[0]}&lon=${coordinates[1]}&units=${units}&lang=${lang}&appid=${config.API_KEY}`
   ).then((response) => response.json());
 }
 
-function getForecastByCoordinates(coordinates, lang = "en", units = "metric") {
+function getForecastByCoordinates(
+  coordinates,
+  lang = "en",
+  units = "imperial"
+) {
   return fetch(
     `${W_API_BASE_URL}/data/2.5/forecast?lat=${coordinates[0]}&lon=${coordinates[1]}&units=${units}&lang=${lang}&appid=${config.API_KEY}`
   ).then((response) => response.json());
@@ -21,7 +25,7 @@ function getCoordinatesByZipcode(zipCode) {
   ).then((response) => response.json());
 }
 
-const getWeatherByCity = (city, units = "metric") =>
+const getWeatherByCity = (city, units = "imperial") =>
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${config.API_KEY}`
   ).then((res) => res.json());
