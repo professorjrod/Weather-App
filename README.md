@@ -36,11 +36,9 @@ The App opened in your browser will display the weather forecast for the request
 
 ### Credits
 
-List of contributors:
+List of contributors: Jared Mumaw
 
 Brian Huynh
-
-Jared Mumaw
 
 Justin Myers
 
