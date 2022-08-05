@@ -25,7 +25,7 @@ function Weatherpage() {
           {Object.keys(weather)[0] ? (
             <Weathercard data={weather} id={weather.id} favorite={true} />
           ) : (
-            <div className="w-fit m-auto p-1 animate-wiggle  ">
+            <div className="w-fit m-auto p-1 animate-wiggle text-white ">
               Enter a zip code to get started
             </div>
           )}
