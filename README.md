@@ -33,3 +33,17 @@ You will be asked to enter the ZIP Code or city of the desired location that you
 Once the ZIP or city has been entered, press the submit button next to the information you entered.
 
 The App opened in your browser will display the weather forecast for the requested area. There is also a favorite button that can be used to save locations for quicker viewing next time.
+
+### Credits
+
+List of contributors:
+
+Brian Huynh
+
+Jared Mumaw
+
+Justin Myers
+
+### License
+
+API License? 
