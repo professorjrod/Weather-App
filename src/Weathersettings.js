@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import config from './config';
-import {getCoordinatesByZipcode} from './endpoints';
 
-function Weathersettings({setCoordinates})
+function Weathersettings(props)
 {
     const [zipCode, setZipCode] = useState('')
 
@@ -14,18 +13,21 @@ function Weathersettings({setCoordinates})
         e.preventDefault();
 
         if(zipCode) {
-        getCoordinatesByZipcode(zipCode)
-        .then(weather => setCoordinates([weather.lat,weather.lon]))
+        getCoordinatesByZipcode();
         }
     }
 
-   
+    const getCoordinatesByZipcode = () => {
+        fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zipCode}&appid=${config.API_KEY}`)
+        .then(response => response.json())
+        .then(data => props.setCoordinates([data.lat, data.lon]))
+    }
 
     return(
-        <div className="weatherInput content-center">
-            <label>ZIP Code:</label>
+        <div>
+            <label>Zip code:</label>
             <input type="text" value={zipCode} onChange={handleSearch}></input>
-            <button onClick={handleSubmit}>Submit ZIP</button>
+            <button onClick={handleSubmit}>Submit Zip</button>
         </div>
     )
 }
